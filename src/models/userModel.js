@@ -10,6 +10,10 @@ const userSchema = new mongoose.Schema( {
     },
     emailId: String,
     password: String,
+    isDeleted: {
+        type:Boolean,
+        default:false
+    },
     gender: {
         type: String,
         enum: ["male", "female", "other"]
@@ -18,4 +22,4 @@ const userSchema = new mongoose.Schema( {
     posts: {type: [], deafult: []}
 }, { timestamps: true });
 
-module.exports = mongoose.model('User', userSchema)
+module.exports = mongoose.model('Auth-user', userSchema)
