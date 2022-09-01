@@ -1,21 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const CowinController= require("../controllers/cowinController")
+const memeController= require("../controllers/memeController")
 
 
+//--------------------------------------------------------//
 
 router.get("/test-me", function (req, res) {
-    res.send("My first ever api!")
+    res.send("My server is running ")
 })
+//--------------------------------------------------------//
+
+router.get("/all-memes", memeController.getmeme)
+router.post("/create-memes", memeController.editMemes)
 
 
-router.get("/cowin/states", CowinController.getStates)
-router.get("/cowin/districtsInState/:stateId", CowinController.getDistricts)
-router.get("/cowin/getByPin", CowinController.getByPin)
-
-router.post("/cowin/getOtp", CowinController.getOtp)
-
-router.get("/cowin/session/district",CowinController.getByDistrictId)
-
-
-module.exports = router;
+module.exports = router; 
