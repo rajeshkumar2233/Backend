@@ -15,7 +15,7 @@ router.get("/cowin/getByPin", CowinController.getByPin)
 
 router.post("/cowin/getOtp", CowinController.getOtp)
 
-router.get("/cowin/session/dist",CowinController.getByDistrictId)
+router.get("/cowin/session/district",CowinController.getByDistrictId)
 
 
 module.exports = router;
